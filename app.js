@@ -4,7 +4,7 @@ let playing = false;
 function changeButton() {
   playing = !playing;
   if(playing === true) {
-    this.innerHTML = '❚ ❚';
+    this.innerHTML = '❚❚';
   } else {
     this.innerHTML = '►';
   }
