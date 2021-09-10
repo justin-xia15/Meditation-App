@@ -13,8 +13,6 @@ const hipHop = new Audio('sounds/hip-hop-lo-fi.mp3');
 const rainy = new Audio('sounds/rainy-day.mp3');
 const ocean = new Audio('sounds/ocean-diving-underwater.mp3');
 
-
-
 function changeButton() {
   playing = !playing;
   if(playing === true) {
@@ -22,6 +20,10 @@ function changeButton() {
   } else {
     this.innerHTML = '►';
   }
+}
+
+function playSound() {
+  
 }
 
 playButtons.forEach(button => button.addEventListener('click', changeButton));
