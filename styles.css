@@ -10,12 +10,25 @@ img {
 .item {
   height: 250px;
   width: 700px;
-  /* background-color: #2A0944; */
-  background-color: #fff;
+  background-color: transparent;
   font-size: 3rem;
   margin: 25% auto 0 auto;
   border: 1px solid gray;
   border-radius: 30px;
+}
+
+.play-button {
+  background-color: transparent;
+  border: none;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  margin-left: 80%;
+  margin-top: 10%;
+}
+
+.icon {
+  font-size: 5rem;
 }
 
 .last {
