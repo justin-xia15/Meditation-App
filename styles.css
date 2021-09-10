@@ -16,6 +16,10 @@ h2 {
   position: absolute;
 }
 
+.wrapper{
+  overflow-x: hidden;
+}
+
 .item {
   height: 150px;
   width: 300px;
