@@ -1,0 +1,23 @@
+body {
+  background-color: #87CEEB;
+}
+
+img {
+  height: 80%;
+  width: 100%;
+}
+
+.item {
+  height: 250px;
+  width: 700px;
+  /* background-color: #2A0944; */
+  background-color: #fff;
+  font-size: 3rem;
+  margin: 25% auto 0 auto;
+  border: 1px solid gray;
+  border-radius: 30px;
+}
+
+.last {
+  margin-bottom: 25%;
+}
