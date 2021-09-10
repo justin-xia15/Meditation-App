@@ -7,6 +7,15 @@ img {
   width: 100%;
 }
 
+h2 {
+  font-size: 3rem;
+  color: #fff;
+  display: inline-block;
+  margin-left: 10%;
+  margin-top: 9%;
+  position: absolute;
+}
+
 .item {
   height: 250px;
   width: 700px;
@@ -17,14 +26,17 @@ img {
   border-radius: 30px;
 }
 
-.play-button {
+.play {
   background-color: transparent;
   border: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 5rem;
   height: 100px;
   width: 100px;
   position: relative;
   margin-left: 80%;
-  margin-top: 10%;
+  margin-top: 11%;
 }
 
 .icon {
