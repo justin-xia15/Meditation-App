@@ -15,10 +15,10 @@ function changeButton() {
   }
 }
 
-function playSound() {
-  const song = music[this.id];
-  song.play();
+function togglePlay() {
+  const action = music[this.id].paused ? 'play' : 'pause';
+  music[this.id][action]();
 }
 
 playButtons.forEach(button => button.addEventListener('click', changeButton));
-playButtons.forEach(button => button.addEventListener('click', playSound));
+playButtons.forEach(button => button.addEventListener('click', togglePlay));
