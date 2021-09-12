@@ -31,6 +31,7 @@ function transition() {
   music[currentSong].pause();
   music[currentSong].currentTime = 0;
   updateName();
+  updatePlayer();
 }
 
 function end(song) {
@@ -46,7 +47,16 @@ function updateName() {
   name.innerHTML = song;
 }
 
+function updatePlayer() {
+  if(playing === true) {
+    botPlay.innerHTML = '►';
+  } else {
+    botPlay.innerHTML = '❚❚';
+  }
+}
+
 function togglePlay() {
+  updatePlayer();
   playing = !playing;
   changeButton();
   if(this.id !== currentSong && currentSong !== null) {
@@ -65,4 +75,5 @@ function togglePlay() {
 
 playButtons.forEach(button => button.addEventListener('click', changeButton));
 playButtons.forEach(button => button.addEventListener('click', togglePlay));
+
 name.addEventListener('click', updateName);
