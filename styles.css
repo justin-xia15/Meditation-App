@@ -78,7 +78,8 @@ p {
   font-size: 1.5rem;
   position: relative;
   margin-left: 60%;
-  margin-top: 5%;
+  margin-top: -11%;
+  text-align: left;
 }
 
 .next {
@@ -89,4 +90,9 @@ p {
 .prev {
   font-size: 1.5rem;
   margin-right: 5%;
+}
+
+.song-name {
+  color: #fff;
+  margin-left: 5%;
 }
