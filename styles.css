@@ -1,5 +1,7 @@
 body {
   background-color: #87CEEB;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 img {
@@ -48,6 +50,15 @@ p {
   position: relative;
   margin-left: 75%;
   margin-top: 11%;
+}
+
+.player {
+  height: 100px;
+  width: 100vw;
+  background-color: #000;
+  margin-top: -24%;
+  z-index: 1000;
+  position: fixed;
 }
 
 .icon {
