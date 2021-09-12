@@ -55,7 +55,7 @@ p {
 .player {
   height: 100px;
   width: 100vw;
-  background-color: #000;
+  background-color: #150050;
   margin-top: -24%;
   z-index: 1000;
   position: fixed;
@@ -67,4 +67,22 @@ p {
 
 .last {
   margin-bottom: 25%;
+}
+
+.bot-play {
+  color: #fff;
+  font-size: 1.5rem;
+  position: relative;
+  margin-left: 68%;
+  margin-top: 8%;
+}
+
+.next {
+  font-size: 1.5rem;
+  margin-left: 8%;
+}
+
+.prev {
+  font-size: 1.5rem;
+  margin-right: 12%;
 }
