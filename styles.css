@@ -52,6 +52,10 @@ p {
   margin-top: 11%;
 }
 
+.play2 {
+  font-size: 1.5rem;
+}
+
 .player {
   height: 100px;
   width: 100vw;
@@ -73,16 +77,16 @@ p {
   color: #fff;
   font-size: 1.5rem;
   position: relative;
-  margin-left: 68%;
-  margin-top: 8%;
+  margin-left: 60%;
+  margin-top: 5%;
 }
 
 .next {
   font-size: 1.5rem;
-  margin-left: 8%;
+  margin-left: 12%;
 }
 
 .prev {
   font-size: 1.5rem;
-  margin-right: 12%;
+  margin-right: 5%;
 }
