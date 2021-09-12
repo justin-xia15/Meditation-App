@@ -1,6 +1,8 @@
 const playButtons = document.querySelectorAll('.play');
 const botPlay = document.querySelector('.play2');
 const name = document.querySelector('.song-name');
+const forward = document.querySelector('.next');
+const backward = document.querySelector('.prev');
 let currentSong = null;
 let currentButton;
 let playing = false;
@@ -53,6 +55,20 @@ function updatePlayer() {
   } else {
     botPlay.innerHTML = '❚❚';
   }
+} // does not work for first click on page load
+
+function nextSong() {
+  if(currentSong !== null) {
+    music[currentSong].pause();
+    currentSong++;
+    updateName();
+    changeButton();
+    music[currentSong].play();
+  }
+}
+
+function lastSong() {
+  console.log("nice");
 }
 
 function togglePlay() {
@@ -75,5 +91,6 @@ function togglePlay() {
 
 playButtons.forEach(button => button.addEventListener('click', changeButton));
 playButtons.forEach(button => button.addEventListener('click', togglePlay));
-
 name.addEventListener('click', updateName);
+forward.addEventListener('click', nextSong);
+backward.addEventListener('click', lastSong);
