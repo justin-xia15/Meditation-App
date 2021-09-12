@@ -1,4 +1,6 @@
 const playButtons = document.querySelectorAll('.play');
+const botPlay = document.querySelector('.play2');
+const name = document.querySelector('.song-name');
 let currentSong = null;
 let currentButton;
 let playing = false;
@@ -13,6 +15,7 @@ function switchButton() {
   // playButtons.forEach(button => button.innerHTML = '►');
   currentButton = document.getElementById(currentSong);
   currentButton.innerHTML = '►';
+  playing = true;
 }
 
 function changeButton() {
@@ -27,12 +30,20 @@ function changeButton() {
 function transition() {
   music[currentSong].pause();
   music[currentSong].currentTime = 0;
+  updateName();
 }
 
 function end(song) {
-  song.addEventListener("ended", function() {
+  song.addEventListener('ended', function() {
     currentButton.innerHTML = '►';
   });
+}
+
+function updateName() {
+  const songName = playButtons[currentSong].parentElement;
+  let song = songName.innerText;
+  song = song.substring(0, song.length - 2); // gets rid of the play/pause symbol
+  name.innerHTML = song;
 }
 
 function togglePlay() {
@@ -47,10 +58,11 @@ function togglePlay() {
   const action = music[this.id].paused ? 'play' : 'pause';
   music[this.id][action]();
   currentSong = this.id;
-
+  updateName();
   currentlyPlaying = music[this.id];
   end(currentlyPlaying);
 }
 
 playButtons.forEach(button => button.addEventListener('click', changeButton));
 playButtons.forEach(button => button.addEventListener('click', togglePlay));
+name.addEventListener('click', updateName);

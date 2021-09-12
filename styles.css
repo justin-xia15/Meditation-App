@@ -78,7 +78,7 @@ p {
   font-size: 1.5rem;
   position: relative;
   margin-left: 60%;
-  margin-top: -11%;
+  margin-top: -15%;
   text-align: left;
 }
 
@@ -95,4 +95,5 @@ p {
 .song-name {
   color: #fff;
   margin-left: 5%;
+  margin-top: 10%;
 }
