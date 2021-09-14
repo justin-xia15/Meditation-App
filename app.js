@@ -14,7 +14,6 @@ new Audio('sounds/happy.mp3'), new Audio('sounds/hipHop.mp3'), new Audio('sounds
 new Audio('sounds/ocean.mp3')];
 
 function switchButton() {
-  // playButtons.forEach(button => button.innerHTML = '►');
   currentButton = document.getElementById(currentSong);
   currentButton.innerHTML = '►';
   playing = true;
@@ -83,24 +82,29 @@ function lastSong() {
 }
 
 function togglePlay() {
+  // clicking on a new song
   if(this.id !== currentSong && currentSong !== null) {
     const btn = document.getElementById(this.id)
     btn.innerHTML = '❚❚';
     transition();
     switchButton();
   }
+  // play current song
   const action = music[this.id].paused ? 'play' : 'pause';
   music[this.id][action]();
   currentSong = this.id;
+  // update play buttons and bottom player
   playing = !playing;
   updatePlayer();
   playerButton();
   changeButton();
   updateName();
+  // updates play button when the song ends
   currentlyPlaying = music[this.id];
   end(currentlyPlaying);
 }
 
+// event listeners
 playButtons.forEach(button => button.addEventListener('click', changeButton));
 playButtons.forEach(button => button.addEventListener('click', togglePlay));
 name.addEventListener('click', updateName);
