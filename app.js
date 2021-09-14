@@ -57,6 +57,11 @@ function updatePlayer() {
   }
 } // does not work for first click on page load
 
+function playerButton() {
+  const btn = document.getElementById(currentSong);
+  botPlay.innerHTML = btn.innerHTML;
+}
+
 function nextSong() {
   if(currentSong !== null) {
     music[currentSong].pause();
@@ -72,9 +77,6 @@ function lastSong() {
 }
 
 function togglePlay() {
-  updatePlayer();
-  playing = !playing;
-  changeButton();
   if(this.id !== currentSong && currentSong !== null) {
     const btn = document.getElementById(this.id)
     btn.innerHTML = '❚❚';
@@ -84,6 +86,10 @@ function togglePlay() {
   const action = music[this.id].paused ? 'play' : 'pause';
   music[this.id][action]();
   currentSong = this.id;
+  updatePlayer();
+  playerButton();
+  playing = !playing;
+  changeButton();
   updateName();
   currentlyPlaying = music[this.id];
   end(currentlyPlaying);
