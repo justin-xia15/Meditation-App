@@ -55,7 +55,7 @@ function updatePlayer() {
   } else {
     botPlay.innerHTML = '❚❚';
   }
-} // does not work for first click on page load
+}
 
 function playerButton() {
   const btn = document.getElementById(currentSong);
@@ -70,10 +70,16 @@ function nextSong() {
     changeButton();
     music[currentSong].play();
   }
-}
+} // previous song's button not updating
 
 function lastSong() {
-  console.log("nice");
+  if(currentSong !== null) {
+    music[currentSong].pause();
+    currentSong--;
+    updateName();
+    changeButton();
+    music[currentSong].play();
+  }
 }
 
 function togglePlay() {
@@ -86,9 +92,9 @@ function togglePlay() {
   const action = music[this.id].paused ? 'play' : 'pause';
   music[this.id][action]();
   currentSong = this.id;
+  playing = !playing;
   updatePlayer();
   playerButton();
-  playing = !playing;
   changeButton();
   updateName();
   currentlyPlaying = music[this.id];
